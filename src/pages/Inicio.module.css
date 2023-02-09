@@ -1,0 +1,41 @@
+.navBar {
+  background-image: url("../images/navBarBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid black;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBar h1 {
+  color: #f0f8ff;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  cursor: default;
+}
+
+.navBarLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.navBarRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.navBarRight img {
+  width: 100px;
+  height: auto;
+}
+
+.body {
+  background-color: var(--primary-color);
+  height: 100vh;
+}

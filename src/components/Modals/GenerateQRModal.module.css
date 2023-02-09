@@ -1,0 +1,14 @@
+.QRCodeButton {
+  font-size: 1.4rem;
+}
+
+.QRCodeButton:hover {
+  cursor: pointer;
+}
+
+.buttonCancel {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(243, 101, 101);
+}

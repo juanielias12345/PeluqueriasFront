@@ -1,0 +1,60 @@
+.editButton {
+  font-size: 1.2rem;
+}
+
+.editButton:hover {
+  cursor: pointer;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.buttonDelete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.3rem;
+}
+
+.buttonDelete:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.formSide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+}
+
+.formSide input {
+  width: 250px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid #2b2727;
+}
+
+.formSide input:focus {
+  outline: none;
+}
+
+.buttonSubmit {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.buttonCancel {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(243, 101, 101);
+}

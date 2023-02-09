@@ -1,0 +1,46 @@
+.buttonAdd {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.formSide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+}
+
+.formSide input {
+  width: 250px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid #2b2727;
+}
+
+.formSide input:focus {
+  outline: none;
+}
+
+.buttonSubmit {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.buttonCancel {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(243, 101, 101);
+}

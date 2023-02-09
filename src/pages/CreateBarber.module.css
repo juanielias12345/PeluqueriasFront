@@ -1,0 +1,97 @@
+.createBarberContainer {
+  background-color: var(--primary-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--secondary-color);
+  background-color: white;
+  border-radius: 6px;
+  padding-top: 10px;
+}
+
+.cardForm h1,
+p {
+  color: var(--secondary-color);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  margin-bottom: 20px;
+  padding: 10px 35px 0;
+}
+
+.formSide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  position: relative;
+}
+
+.formSide input {
+  width: 250px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid #2b2727;
+}
+
+.formContainer .formSide .errorP {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  text-align: center;
+  margin: auto;
+  color: rgb(243, 101, 101);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.formSide input:focus {
+  outline: none;
+}
+
+.formSideFreeAt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  gap: 10px;
+  position: relative;
+  margin-top: -10px;
+}
+
+.formSideFreeAt input {
+  width: 50px;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #2b2727;
+}
+
+.buttonContainer {
+  padding: 10px;
+  background-color: var(--secondary-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.buttonContainer .buttonSubmit {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+}

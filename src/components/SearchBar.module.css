@@ -1,0 +1,103 @@
+.containerInputSearchAndButtonAdd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0 10px;
+  width: 95%;
+  margin: auto;
+}
+
+.containerInputSearch {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.containerInputSearch label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  max-width: 400px;
+  text-align: center;
+}
+
+.containerInputSearch .inputSearch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+
+.containerInputSearch .inputSearch input {
+  width: 330px;
+  border-radius: 6px;
+  padding: 8px;
+  border: none;
+}
+
+.containerInputSearch .inputSearch .resultsNumber {
+  color: gray;
+}
+
+.tableResultsContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.extendListButton {
+  font-size: 1.7rem;
+  color: var(--secondary-color);
+}
+
+.searchButton {
+  font-size: 1.2rem;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+}
+
+.containerPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.pageLinkPagination {
+  color: black;
+  text-decoration: none;
+  border: 1px solid var(--secondary-color);
+  padding: 3px 10px 3px;
+  width: 30px;
+  text-align: center;
+}
+
+.pageLinkPagination:hover {
+  color: white;
+}
+
+.pageLinkPagination:hover {
+  background-color: var(--secondary-color);
+}
+
+.activePagination {
+  background-color: var(--secondary-color);
+}
+
+.activeLinkPagination {
+  color: white;
+}
+
+.breakPagination {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}

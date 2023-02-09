@@ -1,0 +1,16 @@
+.container {
+  width: 250px;
+}
+
+.container .input {
+  width: 250px;
+  border: 1px solid #2b2727;
+}
+
+.container .button {
+  border: 1px solid #2b2727;
+}
+
+.container .dropdown {
+  width: 250px;
+}
