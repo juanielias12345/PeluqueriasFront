@@ -6,8 +6,8 @@ import "./index.css"
 import { store } from './store'
 import { Provider } from 'react-redux'
 import App from './app'
-axios.defaults.baseURL = "http://localhost:3001";
-// axios.defaults.baseURL = "https://peluqueriasback.onrender.com/";
+// axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://peluqueriasback.onrender.com/";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
