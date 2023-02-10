@@ -47,7 +47,7 @@ const GenerateQRModal = (props) => {
           {QRGenerated ? (
             <QRCodeCanvas
               style={{ width: "180px", height: "auto" }}
-              value={`https://tempestad.onrender.com/cortes/${token}`}
+              value={`https://peluquerias-front.vercel.app/cortes/${token}`}
             />
           ) : null}
         </Modal.Body>
