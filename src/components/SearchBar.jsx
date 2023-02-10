@@ -17,6 +17,7 @@ import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import ReactPaginate from "react-paginate";
+import Loading from "./Loading/Loading";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const SearchBar = () => {
   );
   const usersRedux = useSelector((state) => state.usersStore.users);
   const [users, setUsers] = useState(usersRedux);
+  const [userDetails, setUserDetails] = useState({});
   const [loadingSearch, setLoadingSearch] = useState(false);
   const [resultsSearch, setResultsSearch] = useState([]);
   const [error, setError] = useState();
@@ -72,11 +74,13 @@ const SearchBar = () => {
   };
 
   const onClickDetailModal = async (el) => {
-    await dispatch(getUserTurnsReducer({ id: el._id }));
+    setUserDetails(el);
     setModalClientDetailsShow(true);
+    await dispatch(getUserTurnsReducer({ id: el._id }));
   };
 
   const onCloseDetailModal = async () => {
+    setUserDetails({});
     await dispatch(cleanClientTurnsStateReducer());
     setModalClientDetailsShow(false);
   };
@@ -180,11 +184,7 @@ const SearchBar = () => {
               </tr>
             </thead>
             <tbody>
-              {loadingSearch ? (
-                <tr>
-                  <th>Cargando</th>
-                </tr>
-              ) : error ? (
+              {loadingSearch ? null : error ? (
                 <tr>
                   <th>Se ha encontrado un error: {error}</th>
                 </tr>
@@ -207,7 +207,7 @@ const SearchBar = () => {
                         <ClientDetailsModal
                           show={modalClientDetailsShow}
                           onHide={onCloseDetailModal}
-                          client={el}
+                          client={userDetails}
                         />
                       </td>
                       <td>
@@ -229,6 +229,7 @@ const SearchBar = () => {
               )}
             </tbody>
           </Table>
+          <div>{loadingSearch ? <Loading screen={"table"} /> : null}</div>
         </div>
       ) : (
         <div className={styles.tableResultsContainer}>
@@ -251,66 +252,66 @@ const SearchBar = () => {
               </tr>
             </thead>
             <tbody>
-              {loadingGetUsers ? (
-                <tr>
-                  <th>Cargando</th>
-                </tr>
-              ) : (
-                currentItems.map((el, index) => {
-                  return (
-                    <tr key={index}>
-                      <td>
-                        <GenerateQRModal client={el} />
-                      </td>
-                      <td>{el.name}</td>
-                      <td>+{el.phone}</td>
-                      <td>{el.totalCuts}</td>
-                      <td>
-                        <GrSearchAdvanced
-                          className={styles.searchButton}
-                          onClick={() => onClickDetailModal(el)}
-                        />
-                        <ClientDetailsModal
-                          show={modalClientDetailsShow}
-                          onHide={onCloseDetailModal}
-                          client={el}
-                        />
-                      </td>
-                      <td>
-                        <EditClientModal
-                          client={el}
-                          inputSearchFocus={inputSearchFocus}
-                          handleChangeResultsState={(data) =>
-                            setResultsSearch(data)
-                          }
-                          resultsSearch={resultsSearch}
-                          getClientByNameOrPhone={() =>
-                            getClientByNameOrPhone()
-                          }
-                        />
-                      </td>
-                    </tr>
-                  );
-                })
-              )}
+              {loadingGetUsers
+                ? null
+                : currentItems.map((el, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>
+                          <GenerateQRModal client={el} />
+                        </td>
+                        <td>{el.name}</td>
+                        <td>+{el.phone}</td>
+                        <td>{el.totalCuts}</td>
+                        <td>
+                          <GrSearchAdvanced
+                            className={styles.searchButton}
+                            onClick={() => onClickDetailModal(el)}
+                          />
+                          <ClientDetailsModal
+                            show={modalClientDetailsShow}
+                            onHide={onCloseDetailModal}
+                            client={userDetails}
+                          />
+                        </td>
+                        <td>
+                          <EditClientModal
+                            client={el}
+                            inputSearchFocus={inputSearchFocus}
+                            handleChangeResultsState={(data) =>
+                              setResultsSearch(data)
+                            }
+                            resultsSearch={resultsSearch}
+                            getClientByNameOrPhone={() =>
+                              getClientByNameOrPhone()
+                            }
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
             </tbody>
           </Table>
           <div>
-            <ReactPaginate
-              breakLabel='...'
-              nextLabel={<GrFormNext />}
-              onPageChange={handlePageClickUsersList}
-              pageRangeDisplayed={5}
-              pageCount={pageCount}
-              previousLabel={<GrFormPrevious />}
-              renderOnZeroPageCount={null}
-              containerClassName={styles.containerPagination}
-              pageClassName={styles.pagePagination}
-              pageLinkClassName={styles.pageLinkPagination}
-              activeClassName={styles.activePagination}
-              activeLinkClassName={styles.activeLinkPagination}
-              breakClassName={styles.breakPagination}
-            />
+            {loadingGetUsers ? (
+              <Loading screen={"table"} />
+            ) : (
+              <ReactPaginate
+                breakLabel='...'
+                nextLabel={<GrFormNext />}
+                onPageChange={handlePageClickUsersList}
+                pageRangeDisplayed={5}
+                pageCount={pageCount}
+                previousLabel={<GrFormPrevious />}
+                renderOnZeroPageCount={null}
+                containerClassName={styles.containerPagination}
+                pageClassName={styles.pagePagination}
+                pageLinkClassName={styles.pageLinkPagination}
+                activeClassName={styles.activePagination}
+                activeLinkClassName={styles.activeLinkPagination}
+                breakClassName={styles.breakPagination}
+              />
+            )}
           </div>
         </div>
       )}

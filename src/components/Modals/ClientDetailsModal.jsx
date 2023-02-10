@@ -6,6 +6,7 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
+import Loading from "../Loading/Loading";
 
 const ClientDetailsModal = (props) => {
   const barber = useSelector((state) => state.barberStore.barber);
@@ -38,7 +39,7 @@ const ClientDetailsModal = (props) => {
         </Modal.Header>
         <Modal.Body>
           {turnsLoading ? (
-            <h1>Cargando</h1>
+            <Loading screen={"table"} msg={"Cargando datos del cliente"} />
           ) : (
             <div className={styles.allDataContainer}>
               <div className={styles.dataContainer}>

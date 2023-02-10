@@ -1,0 +1,46 @@
+.containerSpinner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.containerSpinner img {
+  width: 150px;
+  height: auto;
+}
+
+.containerSpinner .loadingP {
+  font-size: 1.6rem;
+}
+
+.containerSpinner .msgFScreem {
+  font-weight: 600;
+}
+
+.containerSpinner .handleErrorP {
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+}
+
+.containerSpinner .handleErrorP:hover {
+  text-decoration: underline;
+}
+
+.containerSpinnerInTable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerSpinnerInTable .spinnerInTable {
+  width: 60px;
+}
+
+.containerSpinnerInTable .msgTable {
+  font-weight: 600;
+}

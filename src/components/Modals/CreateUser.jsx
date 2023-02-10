@@ -19,7 +19,7 @@ const CreateUser = () => {
   const reduxUserError = useSelector((state) => state.usersStore.error);
   const [newClient, setNewClient] = useState({
     name: "",
-    phone: ""
+    phone: "",
   });
 
   const handleChangeNewClient = (e) => {
@@ -43,7 +43,7 @@ const CreateUser = () => {
       toast("Se ha creado el cliente con exito");
       setNewClient({
         name: "",
-        phone: ""
+        phone: "",
       });
       setModalShow(false);
       dispatch(getUsersReducer());
@@ -58,7 +58,11 @@ const CreateUser = () => {
 
   return (
     <div>
-      <button className={styles.buttonAdd} onClick={handleClickButtonAddClient}>
+      <button
+        disabled={createClientLoading}
+        className={styles.buttonAdd}
+        onClick={handleClickButtonAddClient}
+      >
         Agregar cliente
         <BsPersonCircle style={{ marginLeft: "5px" }} />
       </button>
