@@ -10,7 +10,7 @@ const CreateBarber = () => {
   const [barberData, setBarberData] = useState({
     name: "",
     phone: "",
-    freeAt: 0,
+    freeAt: 1,
   });
   const [error, setError] = useState({});
   const createBarberLoading = useSelector(
@@ -89,7 +89,6 @@ const CreateBarber = () => {
             </label>
             <input
               min={1}
-              defaultValue={1}
               value={barberData.freeAt}
               id='inputFreeAt'
               name='freeAt'

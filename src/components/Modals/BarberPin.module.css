@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.container .pInfoInput {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.container .pDeniedInput {
+  color: rgb(243, 101, 101);
+  font-size: 0.8rem;
+}
+
+.container input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.container input {
+  width: 180px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid #2b2727;
+}
+
+.container .inputPinDenied {
+  border: 1px solid rgb(243, 101, 101);
+}
+
+.container input:focus {
+  outline: none;
+}
+
+.buttonSubmit {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+}
